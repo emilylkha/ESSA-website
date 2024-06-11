@@ -43,7 +43,7 @@ export default function Home() {
           <h2 className="text-3xl font-semibold text-gray-800 mb-4">Join Us</h2>
           <p className="text-lg text-gray-600 mb-8">
             Become a member of ESSA and gain access to exclusive events, resources, and a community of like-minded individuals.
-            Whether you're looking to expand your knowledge, build your professional network, or contribute to the field of
+            Whether you are looking to expand your knowledge, build your professional network, or contribute to the field of
             economics, ESSA has something to offer.
           </p>
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">

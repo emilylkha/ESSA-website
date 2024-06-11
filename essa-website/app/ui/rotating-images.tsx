@@ -19,7 +19,6 @@ const RotatingImages: React.FC<RotatingImagesProps> = ({ images, interval }) => 
   }, [images, interval]);
 
   return <Image className="object-cover"src={images[currentImageIndex]} alt="Rotating Image" fill={true} priority/>;
-  return <img src={images[currentImageIndex]} alt="Rotating Image"/>;
 };
 
 export default RotatingImages;
