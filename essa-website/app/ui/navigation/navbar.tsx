@@ -20,10 +20,10 @@ export default function NavBar() {
                 key={"ESSA-Logo"}
                 href={"/"}>
                 <Image
-                    src="/ESSALogo.png"
+                    src="/essa-logo.png"
                     alt="Economics Students Society of Australia Logo"
-                    width={80}
-                    height={20}
+                    width={64}
+                    height={40}
                 />
             </Link>
             <div className="hidden md:flex grow items-center justify-center gap-2">
@@ -47,7 +47,6 @@ export default function NavBar() {
         )}
 
     </div>
-        
     </>
   );
 }
