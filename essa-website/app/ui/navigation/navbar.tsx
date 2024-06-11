@@ -1,15 +1,21 @@
 'use client'
 
-import { usePathname } from 'next/navigation';
 import NavLink from './navlinks';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/20/solid';
 
 export default function NavBar() {
-  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <>
-        <div className="flex grow items-center space-around px-10">
+    <>  
+    <div>
+        <div className="flex grow items-center justify-between px-10">
             <Link
                 key={"ESSA-Logo"}
                 href={"/"}>
@@ -20,11 +26,28 @@ export default function NavBar() {
                     height={20}
                 />
             </Link>
-            <div className="flex grow items-center justify-center gap-2">
-                <NavLink />
+            <div className="hidden md:flex grow items-center justify-center gap-2">
+                <NavLink isOpen={isOpen} toggle={toggle}/>
             </div>
-            <div className="bg-black text-white rounded hover:bg-gray-800 font-bold py-2 px-4 rounded">Contact Us</div>
+            <div className="hidden md:flex bg-black text-white rounded hover:bg-gray-800 font-bold py-2 px-4 rounded">Contact Us</div>
+            <div className="md:hidden">
+                <button onClick={toggle}>
+                    {isOpen ? (
+                    <XMarkIcon className="h-6 w-6" />
+                    ) : (
+                    <Bars3Icon className="h-6 w-6" />
+                    )}
+                </button>
+            </div>
         </div>
+        {isOpen && (
+            <div className="md:hidden">
+                <NavLink isOpen={isOpen} toggle={toggle}/>
+            </div>
+        )}
+
+    </div>
+        
     </>
   );
 }
