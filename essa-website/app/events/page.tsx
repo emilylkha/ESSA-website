@@ -6,7 +6,7 @@ import EventCard from '../ui/event/event-card';
 import { eventsList } from '../ui/event/events-list';
 import FilterDropdown from '../ui/filters/filterdropdown';
 
-export default function eventsPage() {
+export default function Events() {
     // fetch eventsList from backend later
 
     const images = ["/event-ballons-photo.jpeg", "/event-night-photo.jpeg"]
