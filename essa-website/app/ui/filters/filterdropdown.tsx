@@ -1,4 +1,4 @@
-// components/FilterDropdown.tsx
+// Filter Drop Down buttons, one button that drops down into different options
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid';
 

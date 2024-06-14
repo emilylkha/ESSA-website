@@ -3,8 +3,11 @@ export interface EventType {
     name: string;
     type: string;
     date: string;
+    time: string;
     description: string;
+    details: string;
     campus: string;
     image: string;
+    registrationLink: string;
   }
   

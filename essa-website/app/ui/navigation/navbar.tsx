@@ -1,3 +1,4 @@
+// NavBar at the top of screen
 'use client'
 
 import NavLink from './navlinks';
@@ -13,9 +14,10 @@ export default function NavBar() {
   };
 
   return (
-    <>  
     <div>
+        {/* Nav Bar - Hamburger for Mobile Users, NavLinks for Desktop*/}
         <div className="flex grow items-center justify-between px-10">
+            {/* ESSA Logo */}
             <Link
                 key={"ESSA-Logo"}
                 href={"/"}>
@@ -26,10 +28,13 @@ export default function NavBar() {
                     height={40}
                 />
             </Link>
+            {/* Nav Links for Desktop, closed for Mobile to save space*/}
             <div className="hidden md:flex grow items-center justify-center gap-2">
-                <NavLink isOpen={isOpen} toggle={toggle}/>
+                <NavLink toggle={toggle}/>
             </div>
+            {/* Contact Us */}
             <div className="hidden md:flex bg-black text-white rounded hover:bg-gray-800 font-bold py-2 px-4 rounded">Contact Us</div>
+            {/* Hamburger Menu for Mobile - toggle DropDown on and off */}
             <div className="md:hidden">
                 <button onClick={toggle}>
                     {isOpen ? (
@@ -40,13 +45,12 @@ export default function NavBar() {
                 </button>
             </div>
         </div>
+        {/* Drop Down Links for Mobile Users */}
         {isOpen && (
             <div className="md:hidden">
-                <NavLink isOpen={isOpen} toggle={toggle}/>
+                <NavLink toggle={toggle}/>
             </div>
         )}
-
     </div>
-    </>
   );
 }

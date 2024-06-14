@@ -1,3 +1,4 @@
+// Filter buttons, all options are next to each other instead of hidden in a dropdown
 import React from 'react';
 
 interface FilterButtonsProps {
