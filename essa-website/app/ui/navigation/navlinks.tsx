@@ -1,3 +1,4 @@
+// Links that will be used in the navbar
 'use client'
 
 import Link from 'next/link';
@@ -14,10 +15,11 @@ const links = [
   { name: 'Membership', href: '/membership' }
 ];
 
-export default function NavLink({ isOpen, toggle }: {isOpen: boolean, toggle: () => void}) {
+export default function NavLink({ toggle }: {toggle: () => void}) {
   const pathname = usePathname();
   return (
-    <>
+    <>  
+        {/* Creates Link for every page */}
         {links.map((link) => {
         return (
         <Link
