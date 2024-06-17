@@ -1,42 +1,55 @@
-const express = require('express');
-const {connectToDB, getDb} = require('./db');
+import express from 'express';
+import { fetchArticles } from './articles.services.js';
+import { connectToDB, getDb } from './db.js';
+import { fetchEvents } from './events.services.js';
 
-// init app & middleware:
-
-const app = express()
-
+const app = express();
 let db;
 
 // db connection:
 connectToDB((err) => {
-    if(!err){
+    if (!err) {
+        db = getDb(); // Retrieve the db connection after successfully connecting
         app.listen(3001, () => {
             console.log('listening on port 3001');
-        } )
-
-        db = getDb()
+        });
+    } else {
+        console.error('Failed to connect to the database');
     }
-    
-})
+});
 
-
+// routes:
+app.get('/articles', async (req, res) => {
+    try {
+        const articles = await fetchArticles(db);
+        res.status(200).json(articles);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 
 // routes:
 
-app.get('/articles', (req, res) => {
-    let articles = [];
+// api for events:
 
-    db.collection('articles')
-        .find()
-        .sort({author:1})
-        .forEach(article => articles.push(article))
-        .then(() => {
-            res.status(200).json(articles); 
-        })
-        .catch(() => {
-            res.status(500).json({error: 'shit'});
-        });
+app.get('/events', async (req, res) => {
+    try {
+        const events = await fetchEvents(db);
+        res.status(200).json(events);
+        console.log(events);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+    
+});
 
-}
 
-)
+
+
+
+
+
+
+
+
+
