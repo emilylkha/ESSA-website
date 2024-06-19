@@ -16,9 +16,11 @@ const PastEventCard: React.FC<EventCardProps> = ({ event, onClick }) => {
       </div>
       <div>
         <h3 className="text-xl font-bold mb-2">{event.name}</h3>
-        <p className="text-gray-600">{event.date}</p>
-        <p className="text-gray-800 mb-4">{event.description}</p>
-        <p className="text-gray-600">{event.campus}</p>
+        <p className="text-gray-600 mb-2">{event.date}</p>
+        <div className="flex gap-2">
+        <p className="bg-emerald-100 rounded-lg p-1">{event.campus}</p>
+        <p className="bg-emerald-200 rounded-lg p-1">{event.type}</p>
+        </div>
       </div>
     </div>
   );

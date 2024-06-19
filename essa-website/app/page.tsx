@@ -5,7 +5,7 @@ export default function Home() {
   const interval = 5000;
   return (
     <main className="flex min-h-screen flex-col items-center">
-      <RotatingImagesHeader images={images} interval={interval} height={60} title={"Economics Student Society of Australia"}/>
+      <RotatingImagesHeader images={images} height={60} title={"Economics Student Society of Australia"}/>
       <section className="w-full max-w-5xl text-center p-10">
         <h1 className="text-4xl font-bold text-gray-800 mb-4">Welcome to the Economics Student Society of Australia</h1>
         <p className="text-xl text-gray-600 mb-8">

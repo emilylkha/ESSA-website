@@ -11,17 +11,42 @@ interface EventCardProps {
 
 const UpcomingEventCard: React.FC<EventCardProps> = ({ event, onClick }) => {
   return (
-    <div className="border shadow-md shadow-gray-200 bg-white rounded-lg p-4 transition duration-400 hover:scale-105 cursor-pointer" onClick={onClick}>
+<div className="flex flex-col justify-between bg-white rounded-lg shadow-md overflow-hidden transition duration-400 hover:scale-105 cursor-pointer" onClick={onClick}>
+  <div>
+      {/* Event Image */}
       <div className="relative h-48 mb-4">
-        <Image src={event.image} alt={event.name} fill={true} className="rounded-md object-cover" />
+        <Image src={event.image} alt={event.name} fill={true} className="object-cover" />
       </div>
-      <div>
+      {/* Event Details */}
+      <div className="p-4">
+        {/* Event Name */}
         <h3 className="text-xl font-bold mb-2">{event.name}</h3>
-        <p className="text-gray-600">{event.date}</p>
-        <p className="text-gray-800 mb-4">{event.description}</p>
-        <p className="text-gray-600">{event.campus}</p>
-        <button className="bg-emerald-600 text-white py-2 px-4 mt-4 rounded-lg hover:bg-emerald-700"><Link href={event.registrationLink}>Register Now!</Link></button>
+
+        {/* Event Date and Time */}
+        <p className="text-gray-600 mb mb-1">{event.date} | {event.time}</p>
+
+        {/* Event Location */}
+        <p className="text-gray-600 mb-3 italic">{event.address}</p>
+
+        {/* Event Description */}
+        <p className="text-gray-800">{event.description}</p>
+        
+        {/* Event Tags */}
+        <div className="flex gap-2 mt-4">
+          <p className="bg-emerald-100 rounded-lg p-1">{event.campus}</p>
+          <p className="bg-emerald-200 rounded-lg p-1">{event.type}</p>
+        </div>
       </div>
+      </div>
+      {/* Registration Link (if it's an upcoming event) */}
+      {event.isUpcoming && ( 
+        <div className="flex gap-4 m-4">
+          <button className="bg-emerald-800 text-white py-2 px-4 rounded-lg hover:bg-emerald-900">
+            <Link href={event.registrationLink} >Register Now!</Link>
+          </button>
+        </div>
+        )}
+        
     </div>
   );
 };

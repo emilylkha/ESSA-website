@@ -51,10 +51,10 @@ export default function Events() {
 
     return (
         <main className="flex min-h-screen w-full flex-col items-center">
-            <RotatingImagesHeader images={images} interval={interval} height={40} title={"Events"}/>
+            <RotatingImagesHeader images={images} height={40} title={"Events"}/>
             <div className="w-full p-10 pb-32 pt-10">
                 <h2 className="text-4xl font-bold my-10">Upcoming Events</h2>
-                <div className="grid gap-8 md:grid-cols-2">
+                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                     {upcomingEventsList.map((event) => (
                         <UpcomingEventCard key={event.id} event={event} onClick={() => openModal(event)}/>
                     ))}
