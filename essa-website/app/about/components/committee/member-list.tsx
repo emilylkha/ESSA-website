@@ -7,17 +7,27 @@ export const memberList: memberType[] = [
         name: "Miro Anderson",
         role: "President",
         campus: "Monash Clayton",
+        picture: "",
     },
     {
         id: 2,
-        name: "Vincent Wong",
-        role: "President",
-        campus: "Melbourne",
+        name: "Albino Leirum",
+        role: "IT Director",
+        campus: "Monash Caulfield",
+        picture: "",
     },
     {
         id: 3,
-        name: "Alex Lo",
-        role: "Marketing Director",
-        campus: "Monash Caulfield",
+        name: "Vincent Wong",
+        role: "President",
+        campus: "University of Melbourne",
+        picture: "",
     },
+    {
+        id: 4,
+        name: "Suryadeep Singh",
+        role: "IT Director",
+        campus: "Monash Clayton",
+        picture: "",
+    }
 ]

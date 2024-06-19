@@ -3,4 +3,5 @@ export interface memberType {
     name: string;
     role: string;
     campus: string;
+    picture: string;
   }

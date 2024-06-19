@@ -1,7 +1,7 @@
 import React from "react";
 import OurStory from "../about/components/our-story";
-import OurObjectives from "../about/components/our-objectives";
-import OurCommittee from "../about/components/our-committee";
+import OurObjectives from "./components/our-objectives";
+import OurCommittee from "../about/components/our-committee-using-filterbuttons";
 
 export default function About() {
     return (
