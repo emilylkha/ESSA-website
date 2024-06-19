@@ -13,7 +13,6 @@ export default function Events() {
     // fetch eventsList from backend later
 
     const images = ["/event-ballons-photo.jpeg", "/event-night-photo.jpeg"]
-    const interval = 5000;
     const upcomingEventsList = eventsList.slice(0, 2);
     
 //   const [eventsList, setEventsList] = useState<EventType[]>([]);

@@ -20,7 +20,7 @@ const RotatingImagesHeader: React.FC<RotatingImagesProps> = ({ images, height, t
   }, [images]);
 
   return (
-  <div className={`flex h-[${height}vh] w-full relative overflow-hidden`}>
+  <div className={`flex w-full relative overflow-hidden`} style={{ height: `${height}vh` }}>
     <Image className="object-cover"src={images[currentImageIndex]} alt="Rotating Image" fill={true} priority/>;
     <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-emerald-950"></div>
     <div className="absolute bottom-0 left-0 w-full p-10">
