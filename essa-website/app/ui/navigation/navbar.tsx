@@ -1,7 +1,7 @@
 // NavBar at the top of screen
 'use client'
 
-import NavLink from './navlinks';
+import NavLinks from './navlinks';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -30,7 +30,7 @@ export default function NavBar() {
             </Link>
             {/* Nav Links for Desktop, closed for Mobile to save space*/}
             <div className="hidden md:flex grow items-center justify-center gap-2">
-                <NavLink toggle={toggle}/>
+                <NavLinks toggle={toggle}/>
             </div>
             {/* Contact Us */}
             <div className="hidden md:flex bg-black text-white rounded hover:bg-gray-800 font-bold py-2 px-4 rounded">Contact Us</div>
@@ -48,7 +48,7 @@ export default function NavBar() {
         {/* Drop Down Links for Mobile Users */}
         {isOpen && (
             <div className="md:hidden">
-                <NavLink toggle={toggle}/>
+                <NavLinks toggle={toggle}/>
             </div>
         )}
     </div>

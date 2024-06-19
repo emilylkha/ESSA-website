@@ -2,11 +2,12 @@
 
 import React, { useState } from 'react';
 import RotatingImages from "../ui/rotating-images";
-import EventCard from '../ui/event/event-card';
+import PastEventCard from '../ui/event/past-event-card';
 import { eventsList } from '../ui/event/events-list';
 import FilterDropdown from '../ui/filters/filterdropdown';
 import { EventType } from '../ui/event/event-type';
 import EventModal from '../ui/event/event-modal';
+import UpcomingEventCard from '../ui/event/upcoming-event-card';
 
 export default function Events() {
     // fetch eventsList from backend later
@@ -49,24 +50,23 @@ export default function Events() {
     };
 
     return (
-        <main className="flex min-h-screen flex-col items-center">
+        <main className="flex min-h-screen w-full flex-col items-center">
             <div className="flex h-[40vh] w-full relative overflow-hidden">
                 <RotatingImages images={images} interval={interval} />
             </div>
             <div className="flex flex-col w-full bg-emerald-950 p-10 justify-evenly">
                 <h1 className="text-white text-6xl">Events</h1>
             </div>
-            <section className="container mx-auto p-8">
-                <div className="pb-32">
-                    <h2 className="text-3xl font-bold mb-8 text-center">Upcoming Events</h2>
-                    <div className="grid gap-8 lg:grid-cols-2">
-                        {upcomingEventsList.map((event) => (
-                            <EventCard key={event.id} event={event} onClick={() => openModal(event)}/>
-                        ))}
-                    </div>
+            <div className="w-full p-10 pb-32 pt-10">
+                <h2 className="text-4xl font-bold my-10">Upcoming Events</h2>
+                <div className="grid gap-8 md:grid-cols-2">
+                    {upcomingEventsList.map((event) => (
+                        <UpcomingEventCard key={event.id} event={event} onClick={() => openModal(event)}/>
+                    ))}
                 </div>
-
-                <h2 className="text-3xl font-bold mb-8 text-center">Past Events</h2>
+            </div>
+            <div className="w-full p-10 pb-32 pt-14 bg-zinc-100">
+                <h2 className="text-4xl font-bold my-8">Past Events</h2>
                 <div className="flex flex-wrap justify-spaced mb-8 gap-5">
                     <FilterDropdown
                     label={`Type: ${typeFilter}`}
@@ -83,10 +83,10 @@ export default function Events() {
                 </div>
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                     {filteredEvents.map((event) => (
-                        <EventCard key={event.id} event={event} onClick={() => openModal(event)}/>
+                        <PastEventCard key={event.id} event={event} onClick={() => openModal(event)}/>
                     ))}
                 </div>
-            </section>
+            </div>
             {/* Modal */}
             {showModal && selectedEvent && (
                 <EventModal key={selectedEvent.id} event={selectedEvent} onClose={closeModal} />

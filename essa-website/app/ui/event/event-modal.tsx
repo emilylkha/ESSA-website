@@ -1,5 +1,6 @@
 import React from 'react';
 import { EventType } from './event-type'; // Assuming EventType definition
+import Link from 'next/link';
 
 interface EventModalProps {
   event: EventType;
@@ -23,7 +24,7 @@ const EventModal: React.FC<EventModalProps> = ({ event, onClose }) => {
         <p>Location: {event.campus}</p>
         <p className="mt-4">{event.description}</p>
         <p className="mt-4">{event.details}</p>
-        <a href={event.registrationLink} className="mt-4 block bg-emerald-500 hover:bg-emerald-600 text-white py-2 px-4 rounded-lg text-center" target="_blank" rel="noopener noreferrer">Register</a>
+        <button className="bg-emerald-600 text-white py-2 px-4 mt-4 rounded-lg hover:bg-emerald-700"><Link href={event.registrationLink}>Register Now!</Link></button>
       </div>
     </div>
   );

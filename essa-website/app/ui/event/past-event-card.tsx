@@ -7,7 +7,7 @@ interface EventCardProps {
   onClick: () => void; // Callback function to open modal
 }
 
-const EventCard: React.FC<EventCardProps> = ({ event, onClick }) => {
+const PastEventCard: React.FC<EventCardProps> = ({ event, onClick }) => {
   return (
     <div className="border bg-white rounded-lg p-4 transition duration-400 hover:scale-105 cursor-pointer" onClick={onClick}>
       <img src={event.image} alt={event.name} className="w-full h-48 object-cover rounded-md mb-4" />
@@ -19,4 +19,4 @@ const EventCard: React.FC<EventCardProps> = ({ event, onClick }) => {
   );
 };
 
-export default EventCard;
+export default PastEventCard;

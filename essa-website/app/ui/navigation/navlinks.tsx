@@ -15,7 +15,7 @@ const links = [
   { name: 'Membership', href: '/membership' }
 ];
 
-export default function NavLink({ toggle }: {toggle: () => void}) {
+export default function NavLinks({ toggle }: {toggle: () => void}) {
   const pathname = usePathname();
   return (
     <>  
