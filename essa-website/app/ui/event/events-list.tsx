@@ -17,6 +17,7 @@ export const eventsList: EventType[] = [
       `Don't miss out on this chance to broaden your understanding of economic theories and real-world applications. Join us for an enriching experience at the University of Melbourne's main campus.`,
     ],
     registrationLink: '/',
+    isUpcoming: true,
   },
   {
     id: 2,
@@ -34,6 +35,7 @@ export const eventsList: EventType[] = [
       `Join us at Clayton campus for an evening of networking, knowledge-sharing, and community building.`,
     ],
     registrationLink: '/',
+    isUpcoming: true,
   },
   {
     id: 3,
@@ -51,5 +53,6 @@ export const eventsList: EventType[] = [
       `Join us at Caulfield campus for an interactive workshop that will equip you with the skills and confidence to tackle real-world data challenges.`,
     ],
     registrationLink: '/',
+    isUpcoming: false,
   },
 ];

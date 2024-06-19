@@ -2,6 +2,7 @@
 import React from 'react';
 import { EventType } from './event-type';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface EventCardProps {
   event: EventType;
@@ -11,7 +12,9 @@ interface EventCardProps {
 const UpcomingEventCard: React.FC<EventCardProps> = ({ event, onClick }) => {
   return (
     <div className="border shadow-md shadow-gray-200 bg-white rounded-lg p-4 transition duration-400 hover:scale-105 cursor-pointer" onClick={onClick}>
-      <img src={event.image} alt={event.name} className="w-full h-48 object-cover rounded-md mb-4" />
+      <div className="relative h-48 mb-4">
+        <Image src={event.image} alt={event.name} fill={true} className="rounded-md object-cover" />
+      </div>
       <div>
         <h3 className="text-xl font-bold mb-2">{event.name}</h3>
         <p className="text-gray-600">{event.date}</p>

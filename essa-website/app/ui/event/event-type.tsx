@@ -10,4 +10,5 @@ export interface EventType {
   details: string[]; // Array of paragraphs describing the event in detail
   campus: string; // Campus where the event will be held
   registrationLink: string; // link for event registration
+  isUpcoming: boolean;
 }
