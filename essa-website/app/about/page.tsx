@@ -1,5 +1,14 @@
-export default function about() {
+import React from "react";
+import OurStory from "../about/components/our-story";
+import OurObjectives from "../about/components/our-objectives";
+import OurCommittee from "../about/components/our-committee";
+
+export default function About() {
     return (
-        <p>About Us test push</p>
+        <div>
+            <OurStory/>
+            <OurObjectives/>
+            <OurCommittee/>
+        </div>
     )
 }
