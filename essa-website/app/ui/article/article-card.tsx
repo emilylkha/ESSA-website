@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface ArticleCardProps {
   article: {
@@ -15,16 +16,18 @@ interface ArticleCardProps {
 
 const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
   return (
-    <div className="bg-white shadow-md rounded-lg overflow-hidden">
-      <img src={article.image} alt={article.title} className="w-full h-48 object-cover" />
-      <div className="p-6">
-        <h2 className="text-xl font-bold mb-2">{article.title}</h2>
-        <p className="text-gray-600 mb-4">{article.author} | {article.date}</p>
-        <p className="text-gray-800">{article.excerpt}</p>
-        <Link href={`/articles/${article.slug}`} className="block mt-4 text-emerald-600 hover:text-emerald-800">Read More
-        </Link>
+    <Link href={`/articles/${article.slug}`} className="grid grid-cols-3 rounded-md gap-4 bg-white hover:bg-gray-100 cursor-pointer md:p-2">
+      <div className="relative">
+        <Image src={article.image} alt={article.title} fill={true} className="rounded-md object-cover" />
       </div>
-    </div>
+      <div className="col-span-2 flex flex-col justify-between">
+        <div>
+          <p className="text-sm md:text-base text-gray-600 mb-4">{article.date}</p>
+          <h2 className="mb-2 md:text-xl">{article.title}</h2>
+        </div>
+        <p className="text-sm md:text-base text-gray-600">{article.author}</p>
+      </div>
+    </Link>
   );
 };
 
