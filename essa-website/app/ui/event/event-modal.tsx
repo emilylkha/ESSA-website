@@ -28,7 +28,7 @@ const EventModal: React.FC<EventModalProps> = ({ event, onClose }) => {
   const renderRegistrationButton = () => {
     if (event.isUpcoming && event.registrationLink) {
       return (
-        <button className="bg-emerald-600 text-white py-2 px-4 mt-4 rounded-lg hover:bg-emerald-700">
+        <button className="bg-emerald-800 text-white py-2 px-4 rounded-lg hover:bg-emerald-900 my-4">
           <Link href={event.registrationLink}>Register Now!</Link>
         </button>
       );

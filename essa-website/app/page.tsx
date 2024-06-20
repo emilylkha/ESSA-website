@@ -1,16 +1,11 @@
-import RotatingImages from "./ui/rotating-images";
+import RotatingImagesHeader from "./ui/rotating-images-header";
 
 export default function Home() {
   const images = ['/uni-melb-photo.png','/about-us-photo.png']
   const interval = 5000;
   return (
     <main className="flex min-h-screen flex-col items-center">
-      <div className="flex h-[60vh] w-full relative overflow-hidden">
-        <RotatingImages images={images} interval={interval} />
-      </div>
-      <div className="flex flex-col w-full bg-emerald-950 p-10 justify-evenly">
-        <h1 className="text-white text-6xl">Economics Student Society of Australia</h1>
-      </div>
+      <RotatingImagesHeader images={images} height={60} title={"Economics Student Society of Australia"}/>
       <section className="w-full max-w-5xl text-center p-10">
         <h1 className="text-4xl font-bold text-gray-800 mb-4">Welcome to the Economics Student Society of Australia</h1>
         <p className="text-xl text-gray-600 mb-8">
