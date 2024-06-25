@@ -16,7 +16,7 @@ export default function NavBar() {
   return (
     <div>
         {/* Nav Bar - Hamburger for Mobile Users, NavLinks for Desktop*/}
-        <div className="flex grow items-center justify-between px-10">
+        <div className="flex grow items-center justify-between px-10 h-16">
             {/* ESSA Logo */}
             <Link
                 key={"ESSA-Logo"}
@@ -35,15 +35,13 @@ export default function NavBar() {
             {/* Contact Us */}
             <div className="hidden md:flex bg-black text-white rounded hover:bg-gray-800 font-bold py-2 px-4 rounded">Contact Us</div>
             {/* Hamburger Menu for Mobile - toggle DropDown on and off */}
-            <div className="md:hidden">
-                <button onClick={toggle}>
-                    {isOpen ? (
-                    <XMarkIcon className="h-6 w-6" />
-                    ) : (
-                    <Bars3Icon className="h-6 w-6" />
-                    )}
-                </button>
-            </div>
+            <button onClick={toggle} className="md:hidden">
+                {isOpen ? (
+                <XMarkIcon className="h-6 w-6" />
+                ) : (
+                <Bars3Icon className="h-6 w-6" />
+                )}
+            </button>
         </div>
         {/* Drop Down Links for Mobile Users */}
         {isOpen && (

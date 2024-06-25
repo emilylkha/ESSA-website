@@ -12,7 +12,8 @@ const links = [
   { name: 'Events', href: '/events' },
   { name: 'Articles', href: '/articles'},
   { name: 'Resources', href: '/resources' },
-  { name: 'Membership', href: '/membership' }
+  { name: 'Membership', href: '/membership' },
+  { name: 'Sponsors', href: '/sponsors' },
 ];
 
 export default function NavLinks({ toggle }: {toggle: () => void}) {
@@ -29,10 +30,10 @@ export default function NavLinks({ toggle }: {toggle: () => void}) {
             className={clsx(
             'flex h-[48px] grow items-center justify-center gap-2 p-3 text-sm font-medium hover:bg-white hover:text-emerald-800 md:flex-none md:p-2 md:px-3',
             {
-                'bg-white text-emerald-800': pathname === link.href,
+                'bg-white text-emerald-700': pathname === link.href,
             },
             )}>
-            <p className="block">{link.name}</p>
+            <p className="block text-lg">{link.name}</p>
         </Link>
         );
     })}

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Merriweather } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "./ui/navigation/navbar";
 
-const merriweather = Merriweather({ subsets: ["latin"], weight: ["400", "700"]});
+const inter = Inter({ subsets: ["latin"], weight: ["400", "700"]});
 
 export const metadata: Metadata = {
   title: "ESSA",
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={merriweather.className}>
+      <body className={inter.className}>
         <NavBar />
         {children}
         </body>
