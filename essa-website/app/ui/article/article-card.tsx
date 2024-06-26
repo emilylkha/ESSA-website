@@ -14,7 +14,7 @@ interface ArticleCardProps {
   };
 }
 
-const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
+const ArticleCard = ({ article }: ArticleCardProps) => {
   return (
     <Link href={`/articles/${article.slug}`} className="grid grid-cols-3 rounded-md gap-4 bg-white hover:bg-gray-100 cursor-pointer md:p-2">
       <div className="relative">

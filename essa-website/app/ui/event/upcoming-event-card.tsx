@@ -9,7 +9,7 @@ interface EventCardProps {
   onClick: () => void; // Callback function to open modal
 }
 
-const UpcomingEventCard: React.FC<EventCardProps> = ({ event, onClick }) => {
+const UpcomingEventCard = ({ event, onClick }: EventCardProps) => {
   return (
 <div className="flex flex-col justify-between bg-white rounded-lg shadow-md overflow-hidden transition duration-400 hover:scale-105 cursor-pointer" onClick={onClick}>
   <div>

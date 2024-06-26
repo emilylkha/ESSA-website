@@ -6,6 +6,7 @@ export interface ArticleType {
       date: string;
       image: string;
       excerpt: string;
+      content?: string[];
       slug: string; // Unique identifier for each article
     };
   }

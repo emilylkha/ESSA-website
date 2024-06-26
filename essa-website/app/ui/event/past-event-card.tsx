@@ -8,7 +8,7 @@ interface EventCardProps {
   onClick: () => void; // Callback function to open modal
 }
 
-const PastEventCard: React.FC<EventCardProps> = ({ event, onClick }) => {
+const PastEventCard = ({ event, onClick }: EventCardProps) => {
   return (
     <div className="border bg-white rounded-lg p-4 transition duration-400 hover:scale-105 cursor-pointer" onClick={onClick}>
       <div className="relative h-48 mb-4">
