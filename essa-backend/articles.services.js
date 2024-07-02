@@ -1,5 +1,5 @@
 
-export const fetchArticles = async (db) => {
+export async function fetchArticles(db){
     if (!db) {
         throw new Error('Database not connected');
     }

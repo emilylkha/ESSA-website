@@ -1,4 +1,4 @@
-export const fetchEvents = async (db) => {
+export async function fetchEvents(db){
     if (!db) {
         throw new Error('Database not connected');
     }
@@ -10,3 +10,6 @@ export const fetchEvents = async (db) => {
 
     return events;
 };
+
+
+

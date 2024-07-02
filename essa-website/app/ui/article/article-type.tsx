@@ -9,3 +9,6 @@ export interface ArticleType {
       slug: string; // Unique identifier for each article
     };
   }
+
+
+  
