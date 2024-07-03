@@ -10,7 +10,8 @@ export async function fetchPages(notionClient, databaseId, sortBy = []){
         };
     
         const response = await notionClient.databases.query(queryOptions);
-        return response.id;
+        const response_page_id = getPages(response.results);
+        return response_page_id;
       } catch (error) {
         console.error('Error fetching pages:', error);
         throw error;
@@ -18,3 +19,11 @@ export async function fetchPages(notionClient, databaseId, sortBy = []){
 
 
 }
+
+// helper function:
+export const getPages = (json_object_array) => {
+    const page_id_array = []
+    json_object_array.map((object) => {page_id_array.push(object.id)})
+    return page_id_array;
+
+} 

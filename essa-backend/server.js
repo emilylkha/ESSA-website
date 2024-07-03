@@ -5,10 +5,11 @@ import { fetchEvents } from './events.services.js';
 import 'dotenv/config';
 import { Client } from "@notionhq/client";
 import { fetchPages } from './notion_api/databasePages.services.js';
+import { getDatabasePageInfo } from './notion_api/databasePageInfo.js';
 
 const app = express();
 let db;
-const databaseId = 'a0db77fbddfb4b24a47005b421e29c25';
+const databaseId = process.env.COMMITEE_DATABASE_KEY;
 
 // db connection:
 connectToDB((err) => {
@@ -38,13 +39,14 @@ app.get('/articles', async (req, res) => {
 
 app.get('/events', async (req, res) => {
     try {
-        const events = await fetchEvents(db);
-        res.status(200).json(events);
+        //const events = await fetchEvents(db);
+        //res.status(200).json(events);
         // trying notion api here:
         const notionClient = new Client({auth: process.env.API_KEY_NOTION});
-        const response = await fetchPages(notionClient, databaseId);
+        //const response = await fetchPages(notionClient, databaseId);
+        const response = await getDatabasePageInfo(notionClient, '01d40c74-3ac4-4583-aa75-78ac43cee101');
 
-        console.log(response);
+        res.status(200).json(response);
 
 
 
