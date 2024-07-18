@@ -10,10 +10,9 @@ import clsx from 'clsx';
 const links = [
   { name: 'About Us', href: '/about' },
   { name: 'Events', href: '/events' },
+  { name: 'Careers', href: '/careers' },
   { name: 'Articles', href: '/articles'},
-  { name: 'Resources', href: '/resources' },
-  { name: 'Membership', href: '/membership' },
-  { name: 'Sponsors', href: '/sponsors' },
+  { name: 'Resources', href: '/resources' }
 ];
 
 export default function NavLinks({ toggle }: {toggle: () => void}) {
