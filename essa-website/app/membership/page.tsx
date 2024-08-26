@@ -1,5 +1,5 @@
 export default function membership() {
     return (
-        <p>Membership</p>
+        <p>Testing Membership</p>
     )
 }
