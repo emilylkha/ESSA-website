@@ -9,7 +9,7 @@ interface ModalProps {
 const Modal: React.FC<ModalProps> = ({ title, onClose, children }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 overflow-y-auto p-4">
-      <div className="bg-white p-8 rounded-lg max-w-lg w-full mx-4 max-h-full overflow-y-auto my-8">
+      <div className="bg-white p-8 rounded-lg max-w-4xl w-full mx-4 max-h-full overflow-y-auto my-8">
         <div className="flex justify-between items-center mb-4">
           <h3 className="text-xl font-bold">{title}</h3>
           <button onClick={onClose} className="focus:outline-none">

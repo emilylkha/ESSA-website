@@ -10,7 +10,7 @@ interface EventModalProps {
   onClose: () => void;
 }
 
-const EventModal: React.FC<EventModalProps> = ({ event, onClose }) => {
+const EventModal = ({ event, onClose }: EventModalProps) => {
   const renderDetails = () => {
     return (
       <>

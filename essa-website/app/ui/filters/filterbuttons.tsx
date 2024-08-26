@@ -7,7 +7,7 @@ interface FilterButtonsProps {
     options: string[];
 }
 
-const FilterButtons: React.FC<FilterButtonsProps> = ({ selectedOption, onSelectOption, options }) => {
+const FilterButtons = ({ selectedOption, onSelectOption, options } : FilterButtonsProps) => {
   return (
     <div className="flex flex-wrap justify-center mb-8">
         {options.map((option) => (

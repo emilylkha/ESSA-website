@@ -10,7 +10,7 @@ interface FilterDropdownProps {
   onSelectOption: (option: string) => void;
 }
 
-const FilterDropdown: React.FC<FilterDropdownProps> = ({ label, options, selectedOption, onSelectOption }) => {
+const FilterDropdown = ({ label, options, selectedOption, onSelectOption } : FilterDropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
