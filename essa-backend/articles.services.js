@@ -4,9 +4,8 @@ export async function fetchArticles(db){
         throw new Error('Database not connected');
     }
 
-    const articles = await db.collection('articles')
+    const articles = await db.collection('database')
         .find()
-        .sort({ author: 1 })
         .toArray();
 
     return articles;

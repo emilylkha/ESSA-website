@@ -3,7 +3,7 @@ import { MongoClient } from 'mongodb';
 let dbconnection = null;
 
 export const connectToDB = (cb) => {
-    MongoClient.connect('mongodb://localhost:27017/ESSA_database')
+    MongoClient.connect(process.env.MONGODB_DATABASE)
         .then((client) => {
             dbconnection = client.db();
             return cb();

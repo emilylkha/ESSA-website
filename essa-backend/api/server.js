@@ -1,20 +1,29 @@
 import express from 'express';
-import { fetchArticles } from './articles.services.js';
-import { connectToDB, getDb } from './db.js';
-import { fetchEvents } from './events.services.js';
+import { fetchArticles } from '../articles.services.js';
+import { connectToDB, getDb } from '../db.js';
+import { fetchEvents } from '../events.services.js';
 import 'dotenv/config';
 import { Client } from "@notionhq/client";
-import { fetchPages } from './notion_api/databasePages.services.js';
-import { getDatabasePageInfo } from './notion_api/databasePageInfo.js';
+import { fetchPages } from '../notion_api/databasePages.services.js';
+import { getDatabasePageInfo } from '../notion_api/databasePageInfo.js';
 
 const app = express();
 let db;
-const databaseId = process.env.COMMITEE_DATABASE_KEY;
+
+app.get('/', (req, res) => {
+    res.send('Hello, Wold!');
+})
+
+app.listen(3001, () => {
+    console.log('listening on port 3001');
+});
+
 
 // db connection:
 connectToDB((err) => {
     if (!err) {
         db = getDb(); // Retrieve the db connection after successfully connecting
+        console.log(db)
         app.listen(3001, () => {
             console.log('listening on port 3001');
         });
@@ -47,8 +56,6 @@ app.get('/events', async (req, res) => {
         const response = await getDatabasePageInfo(notionClient, '01d40c74-3ac4-4583-aa75-78ac43cee101');
 
         res.status(200).json(response);
-
-
 
     } catch (error) {
         res.status(500).json({ error: error.message });
