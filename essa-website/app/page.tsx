@@ -41,7 +41,7 @@ export default function Home() {
             Whether you are looking to expand your knowledge, build your professional network, or contribute to the field of
             economics, ESSA has something to offer.
           </p>
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
             Contact Us
           </button>
         </div>
