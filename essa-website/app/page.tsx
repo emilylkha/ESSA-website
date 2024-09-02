@@ -1,5 +1,4 @@
 import RotatingImagesHeader from "./ui/rotating-images-header";
-import Sponsors from "./components/sponsors";
 export default function Home() {
   const images = ['/uni-melb-photo.png','/about-us-photo.png']
   const interval = 5000;
@@ -11,18 +10,6 @@ export default function Home() {
         <p className="text-xl text-gray-600 mb-8">
           Empowering the next generation of economists through education, networking, and professional development.
         </p>
-        <h2 className="section-heading">Join our events</h2>
-        <p>Check out the exciting events we have planned over the next month, across our University of Melbourne, Monash Caulfield and Clayton campuses!</p>
-        <a href="/events" className="link">See all our events</a>
-        <h2 className="section-heading">Sponsors and Partners</h2>
-        <div>
-            <Sponsors/>
-        </div>
-        <h2 className="section-heading">Recent Publications</h2>
-        <a href="#" className="link">See all our publications</a>
-        <h2 className="section-heading">Read our articles</h2>
-        <a href="/articles" className="link">Check out our most recent articles</a>
-        <h2 className="section-heading">Updates Guides</h2>
 
         <div className="my-12">
           <h2 className="text-3xl font-semibold text-gray-800 mb-4">About Us</h2>
